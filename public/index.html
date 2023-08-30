@@ -6,12 +6,18 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="http://localhost:8080/api/pets" method="post">
-        <label for="">Nombre Perrito</label>
+    <form action="http://localhost:8080/api/users" 
+        method="post"
+        enctype="multipart/form-data"
+    >
+        <label for="">Nombre Usuario</label>
         <input type="text" name="nombre"/>
         <br>
-        <label for="">Edad Perrito</label>
+        <label for="">Edad Usuario</label>
         <input type="number" name="edad"/>
+        <br>
+        <label for="">Imagen Usuario</label>
+        <input type="file" name="file" />
         <button type="submit" value="submit">Enviar</button>
     </form>
 </body>
