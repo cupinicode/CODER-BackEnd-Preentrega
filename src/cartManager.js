@@ -30,13 +30,14 @@ class CartManager {
         }
     }
 
-    addCart(carrito) { // agrega un carrito al array
-
+    addCart() { // agrega un carrito al array
+        const carrito ={}
         carrito.id = this.primerId; // Tomo el primer Id disponible
         this.primerId++
+        carrito.products = []
         this.carts.push(carrito); // Agrego el carrito al array
         this.grabarArchivo(); // Persisto los cambios en el archivo .json
-        // return carrito.id;
+        return 200
     }
 
     getCarts() {
@@ -44,13 +45,12 @@ class CartManager {
     }
     
     getCartById(id) {
-        const encontrado = this.carts.find(({carrito}) => carrito.id === id); // Busco la primera aparicion del Id en el array
+        const encontrado = this.carts.find((carrito) => carrito.id === id); // Busco la primera aparicion del Id en el array
         return (encontrado ? encontrado : undefined)
     }
 
-    addProductToCart(cartId, productId) {
+    addProductToCart(cartId, productId) { // Agrega un producto al carrito (o incrementa la cnatidad)
         const indiceEncontrado = this.carts.findIndex((carrito) => carrito.id === cartId);
-
         if (indiceEncontrado === -1) 
             return 404;
         const carrito = this.carts[indiceEncontrado];

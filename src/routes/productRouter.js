@@ -1,4 +1,5 @@
 import { Router } from "express"; // Importamos el módulo ROUTER de express
+//import { uploader } from "../middlewares/multer.js";
 import ProductManager from "../productManager.js";
 const productManager = new ProductManager(); // Instancio la clase
 

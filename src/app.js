@@ -7,10 +7,10 @@ const app = express() //instancio la aplicación
 app.use(express.json()) // middleware para procesar solicitudes y leer json
 app.use(express.urlencoded({ extended: true}))
 
-import ProductManager from './productManager.js'; //importo la CLASE 
-import CartManager from './cartManager.js'; //importo la CLASE
-const productManager = new ProductManager(); // Instancio la clase
-const cartManager = new CartManager(); // Instancio la clase
+//import ProductManager from './productManager.js'; //importo la CLASE 
+//import CartManager from './cartManager.js'; //importo la CLASE
+//const productManager = new ProductManager(); // Instancio la clase
+//const cartManager = new CartManager(); // Instancio la clase
 
 
 app.use("/api/products", productRouter) // Indico que para la ruta PRODUCT, voy a usar todos los EndPoints del router correspondiente
